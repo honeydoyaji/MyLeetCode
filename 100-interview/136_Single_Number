@@ -1,0 +1,34 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        # Second Solution
+        # Take away: ^ --> associative property
+        # A^A = 0
+        # A^0=A
+        # A^A^B^B^C=0^0^A=A
+
+        comp=0
+        for num in nums:
+            comp=comp^num
+        return comp
+
+        # First Solution
+        # num_len = len(nums)
+
+        # if num_len == 1:
+        #     return nums[0]
+
+        # nums.sort()
+
+        # x = 0
+        # while x < num_len-1:
+        #     if nums[x] == nums[x+1]:
+        #         x += 2
+        #     else:
+        #         return nums[x]
+        
+        # return nums[-1]
+
